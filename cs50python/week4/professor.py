@@ -9,7 +9,6 @@ def main():
     while questions_amount <= 10:
         incorrect_answer = 0
         x, y, answer = generate_integer(level)
-        print(answer)
         user_answer = input(f"{x} + {y} = ")
         if user_answer == answer:
             correct_answer += 1
