@@ -6,8 +6,8 @@ def main():
     level = get_level()
     questions_amount = 0
     correct_answer = 0
-    incorrect_answer = 0
     while questions_amount <= 10:
+        incorrect_answer = 0
         x, y, answer = generate_integer(level)
         print(answer)
         user_answer = input(f"{x} + {y} = ")
@@ -19,13 +19,13 @@ def main():
         while user_answer != answer:
             print("EEE")
             incorrect_answer += 1
+            if incorrect_answer == 3:
+                print(f"{x} + {y} = {answer}")
+                break
             user_answer = input(f"{x} + {y} = ")
             if user_answer == answer:
                 break
-            if incorrect_answer == 3:
-                print(f"{x} + {y} = {answer}")
-                incorrect_answer == 0
-                break
+
 
     print(f"Score: {correct_answer}")
 
