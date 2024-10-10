@@ -28,13 +28,13 @@ def main():
                     break
         except ValueError:
             print("EEE")
-                incorrect_answer += 1
-                user_answer = int(input(f"{x} + {y} = "))
-                if user_answer == answer:
-                    break
-                if incorrect_answer == 3:
-                    print(f"{x} + {y} = {answer}")
-                    break
+            incorrect_answer += 1
+            user_answer = int(input(f"{x} + {y} = "))
+            if user_answer == answer:
+                break
+            if incorrect_answer == 3:
+                print(f"{x} + {y} = {answer}")
+                break
 
     print(f"Score: {correct_answer}")
 
