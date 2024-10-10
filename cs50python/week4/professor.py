@@ -8,25 +8,15 @@ def main():
     correct_answer = 0
     incorrect_answer = 0
     while questions_amount <= 10:
-        try:
-            x, y, answer = generate_integer(level)
-            print(answer)
-            user_answer = input(f"{x} + {y} = ")
-            if user_answer == answer:
-                correct_answer += 1
-                questions_amount += 1
-                if questions_amount == 10:
-                    break
-            while user_answer != answer:
-                print("EEE")
-                incorrect_answer += 1
-                user_answer = input(f"{x} + {y} = ")
-                if user_answer == answer:
-                    break
-                if incorrect_answer == 3:
-                    print(f"{x} + {y} = {answer}")
-                    break
-        except ValueError:
+        x, y, answer = generate_integer(level)
+        print(answer)
+        user_answer = input(f"{x} + {y} = ")
+        if user_answer == answer:
+            correct_answer += 1
+            questions_amount += 1
+            if questions_amount == 10:
+                break
+        while user_answer != answer:
             print("EEE")
             incorrect_answer += 1
             user_answer = input(f"{x} + {y} = ")
@@ -34,6 +24,7 @@ def main():
                 break
             if incorrect_answer == 3:
                 print(f"{x} + {y} = {answer}")
+                incorrect_answer == 0
                 break
 
     print(f"Score: {correct_answer}")
