@@ -4,14 +4,14 @@ import random
 
 def main():     
     level = get_level()
-    questions_amount = 1
+    questions_amount = 0
     correct_answer = 0
     incorrect_answer = 0
     while questions_amount <= 10:
         try:
             x, y, answer = generate_integer(level)
             print(answer)
-            user_answer = int(input(f"{x} + {y} = "))
+            user_answer = input(f"{x} + {y} = ")
             if user_answer == answer:
                 correct_answer += 1
                 questions_amount += 1
@@ -20,7 +20,7 @@ def main():
             while user_answer != answer:
                 print("EEE")
                 incorrect_answer += 1
-                user_answer = int(input(f"{x} + {y} = "))
+                user_answer = input(f"{x} + {y} = ")
                 if user_answer == answer:
                     break
                 if incorrect_answer == 3:
@@ -29,7 +29,7 @@ def main():
         except ValueError:
             print("EEE")
             incorrect_answer += 1
-            user_answer = int(input(f"{x} + {y} = "))
+            user_answer = input(f"{x} + {y} = ")
             if user_answer == answer:
                 break
             if incorrect_answer == 3:
@@ -61,6 +61,7 @@ def generate_integer(level):
         x = random.randint(0,999)
         y = random.randint(0,999)
         answer = x + y
+    answer = str(answer)
     return x, y, answer
 
 
