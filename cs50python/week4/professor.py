@@ -1,7 +1,5 @@
 import random
 
-# Loop: User is prompted a math problem, user inputs answer, new problem (10 times)
-
 def main():     
     level = get_level()
     questions_amount = 0
