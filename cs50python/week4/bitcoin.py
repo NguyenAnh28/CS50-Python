@@ -1,7 +1,7 @@
 import requests
 import sys
 
-if len(sys.argv) != 2:
+if len(sys.argv) != :
     sys.exit()
 else:
     print(sys.argv[1])  
